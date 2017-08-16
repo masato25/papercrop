@@ -15,6 +15,8 @@ module Paperclip
     def crop_command
       target = @attachment.instance
 
+      ::Paperclip.log("[papercrop] attachment.name: #{@attachment.name}")
+      ::Paperclip.log("[papercrop] target: #{target.to_s}")
       if target.cropping?(@attachment.name)
         begin
           w = Integer(target.send :"#{@attachment.name}_crop_w")
