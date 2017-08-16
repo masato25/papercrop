@@ -40,9 +40,9 @@ module Papercrop
         end
 
         processors = definitions[attachment_name][:processors] ||= []
-        unless processors.include? :papercrop
-          processors << :papercrop
-        end
+        #unless processors.include? :papercrop
+        #  processors << :papercrop
+        #end
 
         after_update :"reprocess_to_crop_#{attachment_name}_attachment"
       end
