@@ -39,7 +39,8 @@ module Papercrop
           definitions = Paperclip::Tasks::Attachments.instance.definitions_for(self)
         end
 
-        # processors = definitions[attachment_name][:processors] ||= []
+        processors = definitions[attachment_name][:processors] ||= []
+        
         if processors.include? :skippapercrop
           processors = definitions[attachment_name][:processors] - [:skippapercrop]
         end
